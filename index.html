@@ -213,8 +213,52 @@
               <input type="hidden" id="subject-translated-en" value="">
             </div>
 
+            <!-- 【新機能】アバター・参照画像のインプット（Image-to-Image / 動画参照用） -->
+            <div class="border-t border-[#1A7FA8]/10 pt-4">
+              <label class="block text-sm font-bold text-[#0D3D52] mb-2 flex items-center gap-2">
+                <span class="bg-[#0E9DC5] text-white text-[10px] px-1.5 py-0.5 rounded font-bold shadow-sm">任意</span>
+                アバター・参照画像の追加
+              </label>
+              <p class="text-[11px] text-[#2E7A96] mb-3 font-medium">お手持ちのアバター写真やキャラクター画像、動画のキーフレームを参照元として設定できます。</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <!-- ファイルアップロード用エリア -->
+                <div class="md:col-span-7">
+                  <label class="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-[#1A7FA8]/30 rounded-xl cursor-pointer bg-white/40 hover:bg-[#1A7FA8]/5 transition-all shadow-inner">
+                    <div class="flex flex-col items-center justify-center pt-2 pb-2 text-center px-4">
+                      <i class="fa-regular fa-folder-open text-2xl text-[#1A7FA8] mb-1.5"></i>
+                      <p class="text-xs text-[#0D3D52] font-bold">フォルダから画像を選択</p>
+                      <p class="text-[10px] text-[#2E7A96] mt-0.5">PNG, JPG (最大 5MB)</p>
+                    </div>
+                    <input type="file" id="avatar-uploader" accept="image/png, image/jpeg" class="hidden" onchange="handleAvatarUpload(event)">
+                  </label>
+                </div>
+
+                <!-- アップロードプレビュー表示エリア -->
+                <div class="md:col-span-5">
+                  <div id="avatar-preview-container" class="flex items-center gap-3 bg-[#EBF7FC]/80 p-3 rounded-xl border border-[#1A7FA8]/20 min-h-[96px] justify-center text-center">
+                    <div id="avatar-empty-preview">
+                      <p class="text-xs text-[#2E7A96] font-medium italic">画像未設定</p>
+                    </div>
+                    <div id="avatar-active-preview" class="hidden flex items-center gap-3 w-full">
+                      <div class="relative w-14 h-14 rounded-xl overflow-hidden border-2 border-[#1A7FA8] shadow-md bg-white">
+                        <img id="avatar-preview-img" class="w-full h-full object-cover" src="" alt="Avatar Preview">
+                      </div>
+                      <div class="flex-1 text-left min-w-0">
+                        <p id="avatar-filename" class="text-xs font-bold text-[#0D3D52] truncate">avatar.png</p>
+                        <p class="text-[10px] text-[#2E7A96]">アバター参照ON</p>
+                        <button onclick="removeAvatarImage()" class="text-[10px] text-red-500 hover:text-red-600 font-bold mt-1 flex items-center gap-1">
+                          <i class="fa-regular fa-trash-can"></i> 解除する
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- 2カラム設定エリア -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-[#1A7FA8]/10 pt-4">
               <!-- アートスタイル (Style) -->
               <div>
                 <label class="block text-sm font-bold text-[#0D3D52] mb-2">
@@ -224,6 +268,7 @@
                   <option value="">-- 指定なし --</option>
                   <option value="photorealistic, 8k, captured on 35mm lens, cinematic lighting, hyper-realistic" selected>実写・フォトリアル</option>
                   <option value="anime style, Makoto Shinkai aesthetic, vibrant colors, detailed line art, masterpiece">新海誠風アニメ</option>
+                  <option value="Studio Ghibli style, nostalgic hand-drawn animation, gorgeous hand-painted watercolor background, warm aesthetic, masterwork">スタジオジブリ風（手描き水彩調）</option>
                   <option value="Blade Runner aesthetic, cyberpunk street, neon noir, Unreal Engine 5 render, ray tracing">サイバーパンク・SF</option>
                   <option value="commercial photography, studio lighting, elegant composition, high-end luxury look">ビジネス・広告風</option>
                   <option value="cute claymorphism style, smooth 3D render, vibrant pastel colors, toy design">3Dクレイ調（粘土細工風）</option>
@@ -242,6 +287,8 @@
                   <option value="at the edge of a floating island, ancient ruins, colorful sunset sky">幻想的な浮遊島</option>
                   <option value="clean minimalist studio background, soft elegant shadows">ミニマルなスタジオ</option>
                   <option value="surrounded by majestic epic nature, misty mountains, dramatic sunrise sky">大自然（山・雲）</option>
+                  <option value="in a lush green meadow, rolling hills, giant fluffy cumulus clouds in a nostalgic deep blue sky">ジブリ風ののどかな草原と入道雲</option>
+                  <option value="inside a mystical sun-drenched ancient forest, glowing moss, tall majestic trees">木漏れ日の差し込む幻想的な深い森</option>
                 </select>
               </div>
             </div>
@@ -469,6 +516,7 @@
           <ul class="list-decimal list-inside text-xs space-y-2 text-[#2E7A96] font-medium pl-1">
             <li>画面右上から<span class="font-bold text-[#0D3D52]">「画像モード」</span>を選択（初期状態）します。</li>
             <li><span class="bg-[#FFE066]/30 text-[#0D3D52] px-1.5 py-0.5 rounded font-bold">1. 主役</span>フォームに描きたいテーマを日本語で自由に入力します。</li>
+            <li>アバター画像や既存のキャラクター画像をフォルダからアップロードし、参照指示をプロンプトに結合させます。</li>
             <li><span class="font-bold text-[#1A7FA8]">「AI翻訳・拡張」</span>ボタンをタップして、プロ品質の鮮やかな英語プロンプト記述に自動補正します。</li>
             <li>アートスタイル、背景・環境、ライティング等の各パラメーターを選び、肉付けします。</li>
             <li>リアルタイムに合成された「完成プロンプト」を<span class="font-bold text-[#0D3D52]">「コピーする」</span>で取得し、各種AIツールの生成欄へ貼り付けます。</li>
@@ -484,6 +532,7 @@
           <ul class="list-decimal list-inside text-xs space-y-2 text-[#2E7A96] font-medium pl-1">
             <li>画面右上から<span class="font-bold text-[#0D3D52]">「動画モード」</span>に切り替えます。</li>
             <li>画像モード同様に<span class="font-bold text-[#0D3D52]">「1. 主役」</span>を入力、必要に応じてAI翻訳・拡張を行います。</li>
+            <li>自身のアバター画像やキーフレーム画像を設定することで、動きを持たせる元画像（Image-to-Video参照）としてのプロンプトを構築します。</li>
             <li>【動画限定】活性化する<span class="font-bold text-[#1A7FA8]">「5. カメラワーク・モーション」</span>より、カメラアングルや動きの演出（ドローン・スロー等）を選定します。</li>
             <li>「クイック魔法ワード追加」から画質や雰囲気を高めるフレーズをクリックし、末尾に素早く結合させます。</li>
             <li>組み立てられたプロンプトを<span class="font-bold text-[#0D3D52]">「コピーする」</span>で取得し、Flow等のAI動画生成プラットフォームに貼り付けます。</li>
@@ -511,6 +560,8 @@
     let currentMode = 'image'; // 'image' or 'video'
     let selectedLighting = '';
     let selectedBoosters = [];
+    let uploadedAvatarName = ''; // アップロードされたアバター画像ファイル名
+    let uploadedAvatarData = ''; // Base64データ保管用（必要に応じて）
     
     // API設定（Gemini 2.5 & Imagen 4）
     const apiKey = ""; // ※環境から自動提供
@@ -532,6 +583,49 @@
       renderLibrary();
       updatePrompt();
     };
+
+    // アバター・参照画像アップロード処理
+    function handleAvatarUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      // ファイルサイズのチェック (最大5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        showToast("ファイルサイズは5MB以下にしてください。");
+        return;
+      }
+
+      uploadedAvatarName = file.name;
+      
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        uploadedAvatarData = e.target.result;
+        
+        // UI描画の更新
+        document.getElementById('avatar-empty-preview').classList.add('hidden');
+        document.getElementById('avatar-active-preview').classList.remove('hidden');
+        document.getElementById('avatar-preview-img').src = uploadedAvatarData;
+        document.getElementById('avatar-filename').innerText = uploadedAvatarName;
+        
+        showToast("アバター画像を登録しました！");
+        updatePrompt();
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // アバター参照解除
+    function removeAvatarImage() {
+      uploadedAvatarName = '';
+      uploadedAvatarData = '';
+      
+      document.getElementById('avatar-uploader').value = ''; // インプットクリア
+      document.getElementById('avatar-empty-preview').classList.remove('hidden');
+      document.getElementById('avatar-active-preview').classList.add('hidden');
+      document.getElementById('avatar-preview-img').src = '';
+      
+      showToast("アバター参照を解除しました。");
+      updatePrompt();
+    }
 
     // モード切り替え
     function switchMode(mode) {
@@ -622,6 +716,12 @@
 
       // プロンプトパーツ結合
       let parts = [];
+
+      // 新機能：アバター画像がアップロードされている場合は、プロンプトの先端にアバター参照タグを追加
+      if (uploadedAvatarName) {
+        parts.push(`[Referencing uploaded avatar image: ${uploadedAvatarName}]`);
+      }
+
       if(enSubject) parts.push(enSubject);
       if(styleSelect) parts.push(styleSelect);
       if(envSelect) parts.push(envSelect);
@@ -683,7 +783,7 @@
       const systemPrompt = `あなたは画像・動画生成AIのプロンプトエンジニアです。入力された日本語を、AI（Stable DiffusionやFlow、Midjourney）が驚異的なクオリティを出力できるように「最高の英語ディテール描写プロンプト」に翻訳・拡張してください。
 出力形式は拡張された英語プロンプトのみ。余計な解説、マークダウン、クォーテーションは一切含めずに出力してください。`;
       
-      const userQuery = `「${subjectJP}」を英語のプロンプトに拡張・翻訳してください。`;
+      const userQuery = `「${subjectJP}」を英語 of the subject プロンプトに拡張・翻訳してください。`;
 
       try {
         const responseText = await callGeminiAPI(systemPrompt, userQuery);
@@ -836,6 +936,7 @@
       document.getElementById('motion-select').value = "";
       selectedLighting = "";
       selectedBoosters = [];
+      removeAvatarImage(); // アバターも解除
       
       // ライティングチップ初期化
       document.querySelectorAll('.lighting-chip').forEach(chip => {
@@ -909,7 +1010,9 @@
           env: document.getElementById('env-select').value,
           lighting: selectedLighting,
           motion: document.getElementById('motion-select').value,
-          boosters: [...selectedBoosters]
+          boosters: [...selectedBoosters],
+          avatarName: uploadedAvatarName,
+          avatarData: uploadedAvatarData
         }
       };
 
@@ -944,9 +1047,12 @@
           card.innerHTML = `
             <div class="flex items-start justify-between">
               <div class="cursor-pointer flex-1 mr-2" onclick="loadSavedPrompt('${item.id}')">
-                <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded font-bold ${item.mode === 'video' ? 'bg-[#1A7FA8]/15 text-[#1A7FA8]' : 'bg-[#0E9DC5]/10 text-[#0E9DC5]'}">
-                  ${item.mode === 'video' ? 'VIDEO' : 'IMAGE'}
-                </span>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded font-bold ${item.mode === 'video' ? 'bg-[#1A7FA8]/15 text-[#1A7FA8]' : 'bg-[#0E9DC5]/10 text-[#0E9DC5]'}">
+                    ${item.mode === 'video' ? 'VIDEO' : 'IMAGE'}
+                  </span>
+                  ${item.state?.avatarName ? '<span class="text-[9px] bg-amber-500/10 text-amber-600 font-bold px-1 rounded"><i class="fa-solid fa-paperclip"></i> 参照画像付</span>' : ''}
+                </div>
                 <h4 class="text-xs font-bold text-[#0D3D52] mt-1.5 hover:text-[#1A7FA8] transition-all">${item.title}</h4>
                 <p class="text-[10px] text-[#2E7A96] truncate mt-1 font-mono font-medium">${item.prompt}</p>
               </div>
@@ -974,6 +1080,18 @@
       document.getElementById('env-select').value = item.state.env || "";
       document.getElementById('motion-select').value = item.state.motion || "";
       
+      // アバター画像の復元
+      if (item.state.avatarName && item.state.avatarData) {
+        uploadedAvatarName = item.state.avatarName;
+        uploadedAvatarData = item.state.avatarData;
+        document.getElementById('avatar-empty-preview').classList.add('hidden');
+        document.getElementById('avatar-active-preview').classList.remove('hidden');
+        document.getElementById('avatar-preview-img').src = uploadedAvatarData;
+        document.getElementById('avatar-filename').innerText = uploadedAvatarName;
+      } else {
+        removeAvatarImage();
+      }
+
       selectedLighting = item.state.lighting || "";
       document.querySelectorAll('.lighting-chip').forEach(chip => {
         chip.classList.remove('bg-[#1A7FA8]/15', 'border-[#FFE066]', 'text-[#1A7FA8]', 'shadow-sm');
