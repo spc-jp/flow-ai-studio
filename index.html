@@ -19,43 +19,43 @@
   <style>
     body {
       font-family: 'Inter', 'Noto Sans JP', sans-serif;
-      /* watashi-mikkeのような、優しく明るいオーガニックグラデーション */
-      background: linear-gradient(160deg, #E6F3F3 0%, #F5EBE6 50%, #FAF6F0 100%);
+      /* 澄み切った青空や海のような透明感のある美しいパステルブルーグラデーション */
+      background: linear-gradient(160deg, #C8EFF9 0%, #EBF7FC 50%, #FAFDFE 100%);
       min-height: 100vh;
-      color: #2D2926; /* 目に優しいリッチダークウォームブラウン */
+      color: #0D3D52; /* 視認性と優しさを兼ね備えたリッチなオーガニックネイビー */
     }
     
-    /* 非常に上品なライトグラスモフィズム（ジャーナル風） */
+    /* 清潔感と開放感のあるライトグラスモフィズム（Mikkeライク） */
     .glass-panel {
-      background: rgba(255, 255, 255, 0.65);
+      background: rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(61, 128, 130, 0.12);
-      box-shadow: 0 8px 32px 0 rgba(94, 86, 80, 0.05);
+      border: 1px solid rgba(26, 127, 168, 0.15);
+      box-shadow: 0 8px 32px 0 rgba(26, 127, 168, 0.05);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* 穏やかで入力しやすい入力エリア */
+    /* 穏やかで入力しやすい白ベースの入力エリア */
     .glass-input {
       background: rgba(255, 255, 255, 0.85);
-      border: 1px solid rgba(61, 128, 130, 0.25);
-      color: #2D2926;
+      border: 1px solid rgba(26, 127, 168, 0.25);
+      color: #0D3D52;
       transition: all 0.3s ease;
     }
 
     .glass-input::placeholder {
-      color: #5E5650;
-      opacity: 0.55;
+      color: #2E7A96;
+      opacity: 0.6;
     }
 
     .glass-input:focus {
-      border-color: #3D8082;
+      border-color: #0E9DC5;
       background: #FFFFFF;
-      box-shadow: 0 0 12px rgba(61, 128, 130, 0.15);
+      box-shadow: 0 0 12px rgba(14, 157, 197, 0.2);
       outline: none;
     }
 
-    /* ゴールドラインアクセントホバー効果 (温かみのあるゴールド) */
+    /* 指示された美しいゴールドラインアクセント効果 */
     .card-hover-gold {
       position: relative;
       overflow: hidden;
@@ -68,7 +68,7 @@
       left: 50%;
       width: 0;
       height: 3px;
-      background: linear-gradient(90deg, #F4A261, #E6B450);
+      background: linear-gradient(90deg, #FFE066, #FFD54F);
       transition: all 0.3s ease;
       transform: translateX(-50%);
       border-radius: 999px;
@@ -80,16 +80,16 @@
 
     .card-hover-gold:hover {
       transform: translateY(-2px);
-      border-color: rgba(244, 162, 97, 0.5);
-      box-shadow: 0 12px 30px rgba(94, 86, 80, 0.08);
+      border-color: rgba(255, 224, 102, 0.6);
+      box-shadow: 0 12px 30px rgba(26, 127, 168, 0.12);
     }
 
-    /* 丁寧な暮らしを感じさせるニュアンスカラーボタン */
+    /* 清潔感・先進感を意識したスカイブルーグラデーションボタン */
     .btn-neumorphic {
-      background: linear-gradient(135deg, #3D8082, #2B5D5F);
+      background: linear-gradient(135deg, #1A7FA8, #0E9DC5);
       color: #FFFFFF;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 3px 3px 10px rgba(61, 128, 130, 0.15), -2px -2px 8px rgba(255, 255, 255, 0.8);
+      box-shadow: 3px 3px 10px rgba(14, 157, 197, 0.15), -2px -2px 8px rgba(255, 255, 255, 0.8);
       transition: all 0.3s ease;
       position: relative;
     }
@@ -101,7 +101,7 @@
       left: 50%;
       width: 0;
       height: 3px;
-      background: linear-gradient(90deg, #F4A261, #E6B450);
+      background: linear-gradient(90deg, #FFE066, #FFD54F);
       transition: all 0.3s ease;
       transform: translateX(-50%);
       border-radius: 999px;
@@ -113,13 +113,13 @@
 
     .btn-neumorphic:hover {
       transform: translateY(-2px);
-      box-shadow: 5px 5px 15px rgba(61, 128, 130, 0.25), -3px -3px 10px rgba(255, 255, 255, 0.9);
-      border-color: rgba(244, 162, 97, 0.4);
+      box-shadow: 5px 5px 15px rgba(14, 157, 197, 0.25), -3px -3px 10px rgba(255, 255, 255, 0.9);
+      border-color: rgba(255, 224, 102, 0.4);
     }
 
     .btn-neumorphic:active {
       transform: translateY(1px);
-      box-shadow: 1px 1px 4px rgba(61, 128, 130, 0.1);
+      box-shadow: 1px 1px 4px rgba(14, 157, 197, 0.1);
     }
 
     /* カスタムスクロールバー */
@@ -127,18 +127,18 @@
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: rgba(249, 246, 240, 0.6);
+      background: rgba(235, 247, 252, 0.6);
     }
     ::-webkit-scrollbar-thumb {
-      background: rgba(61, 128, 130, 0.2);
+      background: rgba(26, 127, 168, 0.2);
       border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #3D8082;
+      background: #1A7FA8;
     }
 
     .text-glow {
-      text-shadow: 0 2px 10px rgba(61, 128, 130, 0.1);
+      text-shadow: 0 2px 10px rgba(26, 127, 168, 0.1);
     }
   </style>
 </head>
@@ -147,46 +147,46 @@
   <div class="max-w-7xl mx-auto">
     
     <!-- ヘッダーエリア -->
-    <header class="mb-8 flex flex-col md:flex-row md:items-center md:justify-between border-b border-[#3D8082]/15 pb-6">
+    <header class="mb-8 flex flex-col md:flex-row md:items-center md:justify-between border-b border-[#1A7FA8]/15 pb-6">
       <div>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#3D8082] to-[#E07A5F] flex items-center justify-center shadow-lg shadow-[#3D8082]/10 animate-pulse">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#1A7FA8] to-[#0E9DC5] flex items-center justify-center shadow-lg shadow-[#1A7FA8]/10 animate-pulse">
             <i class="fa-solid fa-wand-magic-sparkles text-white text-xl"></i>
           </div>
-          <h1 class="text-2xl md:text-3xl font-bold tracking-wider text-[#2D2926] text-glow">FlowCraft <span class="text-[#3D8082]">AI</span></h1>
+          <h1 class="text-2xl md:text-3xl font-bold tracking-wider text-[#0D3D52] text-glow">FlowCraft <span class="text-[#1A7FA8]">AI</span></h1>
         </div>
-        <p class="text-xs md:text-sm text-[#5E5650] mt-2 font-medium">「考えるを、ひとりにしない」 AI画像・動画プロンプト・ナビゲーター</p>
+        <p class="text-xs md:text-sm text-[#2E7A96] mt-2 font-medium">「考えるを、ひとりにしない」 AI画像・動画プロンプト・ナビゲーター</p>
       </div>
 
       <!-- 右側コントロール群（使い方ガイド & モード切替） -->
       <div class="mt-4 md:mt-0 flex flex-wrap items-center gap-3">
         <!-- 使い方ボタン -->
-        <button onclick="openHelpModal()" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-white/80 hover:bg-[#F4A261]/15 text-[#2D2926] border border-[#3D8082]/25 transition-all flex items-center gap-1.5 shadow-sm">
-          <i class="fa-regular fa-circle-question text-lg text-[#3D8082]"></i>
+        <button onclick="openHelpModal()" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-white/80 hover:bg-[#FFE066]/15 text-[#0D3D52] border border-[#1A7FA8]/25 transition-all flex items-center gap-1.5 shadow-sm">
+          <i class="fa-regular fa-circle-question text-lg text-[#0E9DC5]"></i>
           <span>使い方ガイド</span>
         </button>
 
         <!-- モード切り替え（画像 vs 動画） -->
-        <div class="glass-panel p-1.5 rounded-xl flex bg-white/40 border border-[#3D8082]/10">
-          <button id="mode-image-btn" onclick="switchMode('image')" class="px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 bg-[#3D8082] text-white shadow-md shadow-[#3D8082]/10">
+        <div class="glass-panel p-1.5 rounded-xl flex bg-white/40 border border-[#1A7FA8]/10">
+          <button id="mode-image-btn" onclick="switchMode('image')" class="px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 bg-[#1A7FA8] text-white shadow-md shadow-[#1A7FA8]/10">
             <i class="fa-solid fa-image"></i>画像モード
           </button>
-          <button id="mode-video-btn" onclick="switchMode('video')" class="px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 text-[#5E5650] hover:text-[#2D2926]">
+          <button id="mode-video-btn" onclick="switchMode('video')" class="px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 text-[#2E7A96] hover:text-[#0D3D52]">
             <i class="fa-solid fa-clapperboard"></i>動画モード
           </button>
         </div>
       </div>
     </header>
 
-    <!-- メイングリッド（2カラム構成） -->
+    <!-- メメイングリッド（2カラム構成） -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       
       <!-- 左カラム: プロンプトビルダー (コックピット) -->
       <section class="lg:col-span-7 space-y-6">
         <div class="glass-panel rounded-2xl p-6 relative overflow-hidden card-hover-gold">
-          <div class="absolute top-0 left-0 w-2 h-full bg-[#3D8082]"></div>
+          <div class="absolute top-0 left-0 w-2 h-full bg-[#1A7FA8]"></div>
           
-          <h2 class="text-lg font-bold mb-6 flex items-center gap-2 text-[#3D8082]">
+          <h2 class="text-lg font-bold mb-6 flex items-center gap-2 text-[#1A7FA8]">
             <i class="fa-solid fa-sliders"></i> プロンプトビルダー
           </h2>
 
@@ -194,40 +194,41 @@
             <!-- 1. 主役（Subject） -->
             <div>
               <div class="flex justify-between items-center mb-2">
-                <label class="text-sm font-bold text-[#2D2926] flex items-center gap-2">
-                  <span class="bg-[#F4A261] text-white text-xs px-2 py-0.5 rounded font-bold shadow-sm">必須</span>
+                <label class="text-sm font-bold text-[#0D3D52] flex items-center gap-2">
+                  <span class="bg-[#FFE066] text-[#0D3D52] text-xs px-2 py-0.5 rounded font-bold shadow-sm">必須</span>
                   1. 主役（何を描きますか？）
                 </label>
-                <span class="text-xs text-[#5E5650] font-medium">日本語OK / AIが拡張翻訳</span>
+                <span class="text-xs text-[#2E7A96] font-medium">日本語OK / AIが拡張翻訳</span>
               </div>
               
               <div class="relative">
                 <textarea id="subject-input" oninput="updatePrompt()" rows="2" class="w-full glass-input rounded-xl p-3 text-sm pr-24 resize-none shadow-inner" placeholder="例：カフェで仕事をする日本の若い女性、可愛い白い子猫、ラグジュアリーな香水ボトル..."></textarea>
-                <button id="btn-ai-enhance" onclick="enhanceSubjectAI()" class="absolute right-2 bottom-2 bg-gradient-to-r from-[#3D8082] to-[#E07A5F] hover:opacity-90 text-white text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all shadow-md">
+                <button id="btn-ai-enhance" onclick="enhanceSubjectAI()" class="absolute right-2 bottom-2 bg-gradient-to-r from-[#1A7FA8] to-[#0E9DC5] hover:opacity-90 text-white text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all shadow-md">
                   <span id="enhance-spinner" class="hidden"><i class="fa-solid fa-spinner animate-spin"></i></span>
-                  <i id="enhance-spark" class="fa-solid fa-wand-magic-sparkles text-[#F4A261]"></i>
+                  <i id="enhance-spark" class="fa-solid fa-wand-magic-sparkles text-[#FFE066]"></i>
                   <span>AI翻訳・拡張</span>
                 </button>
               </div>
+              <!-- AI翻訳元の保存用バッファ -->
               <input type="hidden" id="subject-translated-en" value="">
             </div>
 
             <!-- アバター・参照画像のインプット -->
-            <div class="border-t border-[#3D8082]/10 pt-4">
-              <label class="block text-sm font-bold text-[#2D2926] mb-2 flex items-center gap-2">
-                <span class="bg-[#3D8082] text-white text-[10px] px-1.5 py-0.5 rounded font-bold shadow-sm">任意</span>
+            <div class="border-t border-[#1A7FA8]/10 pt-4">
+              <label class="block text-sm font-bold text-[#0D3D52] mb-2 flex items-center gap-2">
+                <span class="bg-[#1A7FA8] text-white text-[10px] px-1.5 py-0.5 rounded font-bold shadow-sm">任意</span>
                 アバター・参照画像の追加
               </label>
-              <p class="text-[11px] text-[#5E5650] mb-3 font-medium">お手持ちのアバター写真やキャラクター画像、動画のキーフレームを参照元として設定できます。</p>
+              <p class="text-[11px] text-[#2E7A96] mb-3 font-medium">お手持ちのアバター写真やキャラクター画像、動画のキーフレームを参照元として設定できます。</p>
               
               <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
                 <!-- ファイルアップロード用エリア -->
                 <div class="md:col-span-7">
-                  <label class="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-[#3D8082]/20 rounded-xl cursor-pointer bg-white/50 hover:bg-[#3D8082]/5 transition-all shadow-inner">
+                  <label class="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-[#1A7FA8]/20 rounded-xl cursor-pointer bg-white/50 hover:bg-[#1A7FA8]/5 transition-all shadow-inner">
                     <div class="flex flex-col items-center justify-center pt-2 pb-2 text-center px-4">
-                      <i class="fa-regular fa-folder-open text-2xl text-[#3D8082] mb-1.5"></i>
-                      <p class="text-xs text-[#2D2926] font-bold">フォルダから画像を選択</p>
-                      <p class="text-[10px] text-[#5E5650] mt-0.5">PNG, JPG (最大 5MB)</p>
+                      <i class="fa-regular fa-folder-open text-2xl text-[#1A7FA8] mb-1.5"></i>
+                      <p class="text-xs text-[#0D3D52] font-bold">フォルダから画像を選択</p>
+                      <p class="text-[10px] text-[#2E7A96] mt-0.5">PNG, JPG (最大 5MB)</p>
                     </div>
                     <input type="file" id="avatar-uploader" accept="image/png, image/jpeg" class="hidden" onchange="handleAvatarUpload(event)">
                   </label>
@@ -235,17 +236,17 @@
 
                 <!-- アップロードプレビュー表示エリア -->
                 <div class="md:col-span-5">
-                  <div id="avatar-preview-container" class="flex items-center gap-3 bg-[#E6F3F3]/50 p-3 rounded-xl border border-[#3D8082]/15 min-h-[96px] justify-center text-center">
+                  <div id="avatar-preview-container" class="flex items-center gap-3 bg-[#EBF7FC]/50 p-3 rounded-xl border border-[#1A7FA8]/15 min-h-[96px] justify-center text-center">
                     <div id="avatar-empty-preview">
-                      <p class="text-xs text-[#5E5650] font-medium italic">画像未設定</p>
+                      <p class="text-xs text-[#2E7A96] font-medium italic">画像未設定</p>
                     </div>
                     <div id="avatar-active-preview" class="hidden flex items-center gap-3 w-full">
-                      <div class="relative w-14 h-14 rounded-xl overflow-hidden border-2 border-[#3D8082] shadow-md bg-white">
+                      <div class="relative w-14 h-14 rounded-xl overflow-hidden border-2 border-[#1A7FA8] shadow-md bg-white">
                         <img id="avatar-preview-img" class="w-full h-full object-cover" src="" alt="Avatar Preview">
                       </div>
                       <div class="flex-1 text-left min-w-0">
-                        <p id="avatar-filename" class="text-xs font-bold text-[#2D2926] truncate">avatar.png</p>
-                        <p class="text-[10px] text-[#5E5650]">アバター参照ON</p>
+                        <p id="avatar-filename" class="text-xs font-bold text-[#0D3D52] truncate">avatar.png</p>
+                        <p class="text-[10px] text-[#2E7A96]">アバター参照ON</p>
                         <button onclick="removeAvatarImage()" class="text-[10px] text-red-500 hover:text-red-600 font-bold mt-1 flex items-center gap-1">
                           <i class="fa-regular fa-trash-can"></i> 解除する
                         </button>
@@ -257,10 +258,10 @@
             </div>
 
             <!-- 2カラム設定エリア -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-[#3D8082]/10 pt-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-[#1A7FA8]/10 pt-4">
               <!-- アートスタイル (Style) -->
               <div>
-                <label class="block text-sm font-bold text-[#2D2926] mb-2">
+                <label class="block text-sm font-bold text-[#0D3D52] mb-2">
                   2. アートスタイル
                 </label>
                 <select id="style-select" onchange="updatePrompt()" class="w-full glass-input rounded-xl p-3 text-sm font-medium">
@@ -276,7 +277,7 @@
 
               <!-- 背景・環境 (Environment) -->
               <div>
-                <label class="block text-sm font-bold text-[#2D2926] mb-2">
+                <label class="block text-sm font-bold text-[#0D3D52] mb-2">
                   3. 背景・環境
                 </label>
                 <select id="env-select" onchange="updatePrompt()" class="w-full glass-input rounded-xl p-3 text-sm font-medium">
@@ -294,38 +295,38 @@
 
             <!-- 4. ライティング (Lighting) -->
             <div>
-              <label class="block text-sm font-bold text-[#2D2926] mb-2">
+              <label class="block text-sm font-bold text-[#0D3D52] mb-2">
                 4. ライティング演出
               </label>
               <div class="flex flex-wrap gap-2" id="lighting-chips">
-                <button type="button" onclick="selectLighting('', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#3D8082]/15 bg-white/50 text-[#5E5650] hover:bg-[#3D8082]/10 transition-all active-chip" data-val="">
+                <button type="button" onclick="selectLighting('', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#1A7FA8]/15 bg-white/50 text-[#2E7A96] hover:bg-[#1A7FA8]/10 transition-all active-chip" data-val="">
                   なし
                 </button>
-                <button type="button" onclick="selectLighting('cinematic lighting, dramatic shadows', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#3D8082]/15 bg-white/50 text-[#5E5650] hover:bg-[#3D8082]/10 transition-all" data-val="cinematic lighting, dramatic shadows">
+                <button type="button" onclick="selectLighting('cinematic lighting, dramatic shadows', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#1A7FA8]/15 bg-white/50 text-[#2E7A96] hover:bg-[#1A7FA8]/10 transition-all" data-val="cinematic lighting, dramatic shadows">
                   シネマティック
                 </button>
-                <button type="button" onclick="selectLighting('golden hour warm light, sunbeams', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#3D8082]/15 bg-white/50 text-[#5E5650] hover:bg-[#3D8082]/10 transition-all" data-val="golden hour warm light, sunbeams">
+                <button type="button" onclick="selectLighting('golden hour warm light, sunbeams', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#1A7FA8]/15 bg-white/50 text-[#2E7A96] hover:bg-[#1A7FA8]/10 transition-all" data-val="golden hour warm light, sunbeams">
                   ゴールデンアワー
                 </button>
-                <button type="button" onclick="selectLighting('vibrant neon glow, cyberpunk ambient light', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#3D8082]/15 bg-white/50 text-[#5E5650] hover:bg-[#3D8082]/10 transition-all" data-val="vibrant neon glow, cyberpunk ambient light">
+                <button type="button" onclick="selectLighting('vibrant neon glow, cyberpunk ambient light', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#1A7FA8]/15 bg-white/50 text-[#2E7A96] hover:bg-[#1A7FA8]/10 transition-all" data-val="vibrant neon glow, cyberpunk ambient light">
                   ネオン
                 </button>
-                <button type="button" onclick="selectLighting('soft studio lighting, three-point lighting', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#3D8082]/15 bg-white/50 text-[#5E5650] hover:bg-[#3D8082]/10 transition-all" data-val="soft studio lighting, three-point lighting">
+                <button type="button" onclick="selectLighting('soft studio lighting, three-point lighting', this)" class="lighting-chip px-3 py-1.5 rounded-lg text-xs font-bold border border-[#1A7FA8]/15 bg-white/50 text-[#2E7A96] hover:bg-[#1A7FA8]/10 transition-all" data-val="soft studio lighting, three-point lighting">
                   スタジオライト
                 </button>
               </div>
             </div>
 
             <!-- 5 & 6. 動画専用コントロール（Camera & Pacing） -->
-            <div id="motion-container" class="opacity-45 pointer-events-none transition-all duration-300 border-t border-[#3D8082]/15 pt-4">
+            <div id="motion-container" class="opacity-45 transition-all duration-300 border-t border-[#1A7FA8]/15 pt-4">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- 5. カメラモーション -->
                 <div>
-                  <label class="block text-sm font-bold text-[#2D2926] mb-2 flex items-center gap-2">
-                    <i class="fa-solid fa-video text-[#3D8082]"></i>
+                  <label class="block text-sm font-bold text-[#0D3D52] mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-video text-[#1A7FA8]"></i>
                     5. カメラワーク・モーション
                   </label>
-                  <select id="motion-select" onchange="updatePrompt()" class="w-full glass-input rounded-xl p-3 text-sm font-medium">
+                  <select id="motion-select" onchange="updatePrompt()" disabled class="w-full glass-input rounded-xl p-3 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed">
                     <option value="">-- 指定なし（Flowにおまかせ） --</option>
                     <option value="slow motion, subtle wind blowing hair, peaceful movement">スローモーション (微風・極小の動き)</option>
                     <option value="FPV drone cinematic shot, soaring high, sweeping landscape motion">ドローン空撮 (広大な景色・疾走感)</option>
@@ -336,11 +337,11 @@
 
                 <!-- 6. 目標秒数と構成テンポ（Pacing） -->
                 <div>
-                  <label class="block text-sm font-bold text-[#2D2926] mb-2 flex items-center gap-2">
-                    <i class="fa-solid fa-stopwatch text-[#3D8082]"></i>
+                  <label class="block text-sm font-bold text-[#0D3D52] mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-stopwatch text-[#1A7FA8]"></i>
                     6. 目標秒数とテンポ感（構成）
                   </label>
-                  <select id="pacing-select" onchange="updatePrompt()" class="w-full glass-input rounded-xl p-3 text-sm font-medium">
+                  <select id="pacing-select" onchange="updatePrompt()" disabled class="w-full glass-input rounded-xl p-3 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed">
                     <option value="">-- 指定なし（尺に合わせる） --</option>
                     <option value="15s-pacing, fast-paced sequence, high-energy dynamic editing, quick cuts">15秒 (SNSショート・激しくテンポ感のある展開)</option>
                     <option value="30s-pacing, balanced pacing, commercial tempo, smooth seamless transition" selected>30秒 (標準CM・バランスが取れた滑らかな流れ)</option>
@@ -355,40 +356,40 @@
 
         <!-- クイック・チートシート（ヘルプ＆タップ追加） -->
         <div class="glass-panel rounded-2xl p-6 card-hover-gold">
-          <h3 class="text-sm font-bold text-[#2D2926] mb-3 flex items-center gap-2">
-            <i class="fa-solid fa-wand-magic text-[#3D8082]"></i> クイック魔法ワード追加（クリックで追加）
+          <h3 class="text-sm font-bold text-[#0D3D52] mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-wand-magic text-[#1A7FA8]"></i> クイック魔法ワード追加（クリックで追加）
           </h3>
-          <p class="text-xs text-[#5E5650] mb-4 font-medium">プロンプトを極限まで高画質化・ハイクオリティに仕上げるお助け呪文</p>
+          <p class="text-xs text-[#2E7A96] mb-4 font-medium">プロンプトを極限まで高画質化・ハイクオリティに仕上げるお助け呪文</p>
           
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-            <button onclick="addBooster('masterpiece')" class="text-left bg-white/50 hover:bg-[#E07A5F]/10 border border-[#3D8082]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
-              <div class="text-[11px] font-bold text-[#3D8082] group-hover:text-[#E07A5F]">最高傑作</div>
-              <div class="text-[10px] text-[#5E5650] font-mono font-medium">masterpiece</div>
+            <button onclick="addBooster('masterpiece')" class="text-left bg-white/50 hover:bg-[#0E9DC5]/10 border border-[#1A7FA8]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
+              <div class="text-[11px] font-bold text-[#1A7FA8] group-hover:text-[#0E9DC5]">最高傑作</div>
+              <div class="text-[10px] text-[#2E7A96] font-mono font-medium">masterpiece</div>
             </button>
-            <button onclick="addBooster('highly detailed')" class="text-left bg-white/50 hover:bg-[#E07A5F]/10 border border-[#3D8082]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
-              <div class="text-[11px] font-bold text-[#3D8082] group-hover:text-[#E07A5F]">極細部描写</div>
-              <div class="text-[10px] text-[#5E5650] font-mono font-medium">highly detailed</div>
+            <button onclick="addBooster('highly detailed')" class="text-left bg-white/50 hover:bg-[#0E9DC5]/10 border border-[#1A7FA8]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
+              <div class="text-[11px] font-bold text-[#1A7FA8] group-hover:text-[#0E9DC5]">極細部描写</div>
+              <div class="text-[10px] text-[#2E7A96] font-mono font-medium">highly detailed</div>
             </button>
-            <button onclick="addBooster('unreal engine 5 render')" class="text-left bg-white/50 hover:bg-[#E07A5F]/10 border border-[#3D8082]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
-              <div class="text-[11px] font-bold text-[#3D8082] group-hover:text-[#E07A5F]">3D美麗レンダ</div>
-              <div class="text-[10px] text-[#5E5650] font-mono font-medium">unreal engine 5</div>
+            <button onclick="addBooster('unreal engine 5 render')" class="text-left bg-white/50 hover:bg-[#0E9DC5]/10 border border-[#1A7FA8]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
+              <div class="text-[11px] font-bold text-[#1A7FA8] group-hover:text-[#0E9DC5]">3D美麗レンダ</div>
+              <div class="text-[10px] text-[#2E7A96] font-mono font-medium">unreal engine 5</div>
             </button>
-            <button onclick="addBooster('bokeh effect')" class="text-left bg-white/50 hover:bg-[#E07A5F]/10 border border-[#3D8082]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
-              <div class="text-[11px] font-bold text-[#3D8082] group-hover:text-[#E07A5F]">背景ボケ</div>
-              <div class="text-[10px] text-[#5E5650] font-mono font-medium">bokeh effect</div>
+            <button onclick="addBooster('bokeh effect')" class="text-left bg-white/50 hover:bg-[#0E9DC5]/10 border border-[#1A7FA8]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
+              <div class="text-[11px] font-bold text-[#1A7FA8] group-hover:text-[#0E9DC5]">背景ボケ</div>
+              <div class="text-[10px] text-[#2E7A96] font-mono font-medium">bokeh effect</div>
             </button>
-            <button onclick="addBooster('volumetric lighting')" class="text-left bg-white/50 hover:bg-[#E07A5F]/10 border border-[#3D8082]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
-              <div class="text-[11px] font-bold text-[#3D8082] group-hover:text-[#E07A5F]">立体的な光</div>
-              <div class="text-[10px] text-[#5E5650] font-mono font-medium">volumetric light</div>
+            <button onclick="addBooster('volumetric lighting')" class="text-left bg-white/50 hover:bg-[#0E9DC5]/10 border border-[#1A7FA8]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
+              <div class="text-[11px] font-bold text-[#1A7FA8] group-hover:text-[#0E9DC5]">立体的な光</div>
+              <div class="text-[10px] text-[#2E7A96] font-mono font-medium">volumetric light</div>
             </button>
-            <button onclick="addBooster('epic atmosphere')" class="text-left bg-white/50 hover:bg-[#E07A5F]/10 border border-[#3D8082]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
-              <div class="text-[11px] font-bold text-[#3D8082] group-hover:text-[#E07A5F]">壮大な空気感</div>
-              <div class="text-[10px] text-[#5E5650] font-mono font-medium">epic atmosphere</div>
+            <button onclick="addBooster('epic atmosphere')" class="text-left bg-white/50 hover:bg-[#0E9DC5]/10 border border-[#1A7FA8]/10 rounded-lg p-2 transition-all group relative card-hover-gold">
+              <div class="text-[11px] font-bold text-[#1A7FA8] group-hover:text-[#0E9DC5]">壮大な空気感</div>
+              <div class="text-[10px] text-[#2E7A96] font-mono font-medium">epic atmosphere</div>
             </button>
           </div>
           
-          <div id="booster-tags-container" class="mt-4 flex flex-wrap gap-1.5 min-h-[30px] p-2 bg-[#E6F3F3]/60 rounded-xl border border-[#3D8082]/15 shadow-inner">
-            <span class="text-xs text-[#5E5650] self-center font-medium" id="no-booster-placeholder">追加した魔法ワードがここに並びます（クリックで個別削除可能）</span>
+          <div id="booster-tags-container" class="mt-4 flex flex-wrap gap-1.5 min-h-[30px] p-2 bg-[#EBF7FC]/60 rounded-xl border border-[#1A7FA8]/15 shadow-inner">
+            <span class="text-xs text-[#2E7A96] self-center font-medium" id="no-booster-placeholder">追加した魔法ワードがここに並びます（クリックで個別削除可能）</span>
           </div>
         </div>
 
@@ -400,17 +401,17 @@
         <!-- プロンプト出力＆コピー -->
         <div class="glass-panel rounded-2xl p-6 relative card-hover-gold">
           <div class="flex items-center justify-between mb-4">
-            <h3 class="text-sm font-bold text-[#2D2926] flex items-center gap-2">
+            <h3 class="text-sm font-bold text-[#0D3D52] flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
               完成プロンプト (English)
             </h3>
-            <button onclick="clearAllInputs()" class="text-xs text-[#5E5650] hover:text-[#3D8082] font-bold transition-all">
+            <button onclick="clearAllInputs()" class="text-xs text-[#2E7A96] hover:text-[#1A7FA8] font-bold transition-all">
               <i class="fa-solid fa-arrow-rotate-left"></i> リセット
             </button>
           </div>
 
           <!-- 出力テキストエリア -->
-          <textarea id="final-prompt-area" class="w-full h-36 bg-white/65 border border-[#3D8082]/20 rounded-xl p-4 text-xs font-mono leading-relaxed text-[#2D2926] select-all resize-none shadow-inner" readonly></textarea>
+          <textarea id="final-prompt-area" class="w-full h-36 bg-white/65 border border-[#1A7FA8]/20 rounded-xl p-4 text-xs font-mono leading-relaxed text-[#0D3D52] select-all resize-none shadow-inner" readonly></textarea>
 
           <!-- アクションボタン群 -->
           <div class="grid grid-cols-2 gap-4 mt-4">
@@ -419,40 +420,40 @@
               <span>コピーする</span>
             </button>
             
-            <button onclick="saveToLibraryModal()" class="bg-white/75 hover:bg-[#E6F3F3] border border-[#3D8082]/25 text-[#2D2926] py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-sm">
-              <i class="fa-regular fa-bookmark text-lg text-[#3D8082]"></i>
+            <button onclick="saveToLibraryModal()" class="bg-white/75 hover:bg-[#EBF7FC] border border-[#1A7FA8]/25 text-[#0D3D52] py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-sm">
+              <i class="fa-regular fa-bookmark text-lg text-[#1A7FA8]"></i>
               <span>保存する</span>
             </button>
           </div>
 
           <!-- Flow貼り付けガイド -->
-          <div class="mt-4 text-[11px] text-[#5E5650] bg-[#E6F3F3]/80 p-3 rounded-lg flex items-start gap-2 border border-[#3D8082]/15 font-medium">
-            <i class="fa-solid fa-circle-info text-[#3D8082] mt-0.5"></i>
+          <div class="mt-4 text-[11px] text-[#2E7A96] bg-[#EBF7FC]/80 p-3 rounded-lg flex items-start gap-2 border border-[#1A7FA8]/15 font-medium">
+            <i class="fa-solid fa-circle-info text-[#1A7FA8] mt-0.5"></i>
             <span>コピーしたプロンプトを、FlowやStable Diffusionのプロンプト入力欄にそのまま貼り付けるだけで、美しい画像/動画が生成されます。</span>
           </div>
         </div>
 
         <!-- テスト生成プレビュー（Imagen 4.0） -->
         <div class="glass-panel rounded-2xl p-6 card-hover-gold">
-          <h3 class="text-sm font-bold text-[#2D2926] mb-3 flex items-center gap-2">
-            <i class="fa-solid fa-image text-[#E07A5F]"></i>
+          <h3 class="text-sm font-bold text-[#0D3D52] mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-image text-[#0E9DC5]"></i>
             テスト生成プレビュー（お試し）
           </h3>
-          <p class="text-xs text-[#5E5650] mb-4 font-medium">作成したプロンプトでどのようなイメージになるか、実際に画像AIでテスト生成できます。</p>
+          <p class="text-xs text-[#2E7A96] mb-4 font-medium">作成したプロンプトでどのようなイメージになるか、実際に画像AIでテスト生成できます。</p>
           
-          <button id="btn-generate-test" onclick="generateTestImage()" class="w-full bg-[#3D8082] hover:bg-[#2B5D5F] text-white py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md">
+          <button id="btn-generate-test" onclick="generateTestImage()" class="w-full bg-[#1A7FA8] hover:bg-[#0E9DC5] text-white py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md">
             <i class="fa-solid fa-circle-play"></i> テスト画像を生成
           </button>
 
           <!-- 画像表示エリア -->
-          <div id="test-image-box" class="mt-4 aspect-video bg-white/50 rounded-xl border border-[#3D8082]/20 flex flex-col items-center justify-center relative overflow-hidden shadow-inner">
+          <div id="test-image-box" class="mt-4 aspect-video bg-white/50 rounded-xl border border-[#1A7FA8]/20 flex flex-col items-center justify-center relative overflow-hidden shadow-inner">
             <div id="test-image-placeholder" class="text-center p-4">
-              <i class="fa-regular fa-images text-3xl text-[#5E5650]/60 mb-2"></i>
-              <p class="text-xs text-[#5E5650] font-bold">生成されたテスト画像がここに表示されます</p>
+              <i class="fa-regular fa-images text-3xl text-[#2E7A96]/60 mb-2"></i>
+              <p class="text-xs text-[#2E7A96] font-bold">生成されたテスト画像がここに表示されます</p>
             </div>
             <div id="test-image-loading" class="hidden text-center absolute inset-0 bg-white/90 flex flex-col items-center justify-center">
-              <div class="w-10 h-10 border-4 border-[#3D8082] border-t-transparent rounded-full animate-spin mb-2"></div>
-              <p class="text-xs text-[#3D8082] font-bold">プロンプトを分析して画像を生成中...</p>
+              <div class="w-10 h-10 border-4 border-[#1A7FA8] border-t-transparent rounded-full animate-spin mb-2"></div>
+              <p class="text-xs text-[#1A7FA8] font-bold">プロンプトを分析して画像を生成中...</p>
             </div>
             <img id="test-image-img" class="hidden w-full h-full object-cover" alt="テスト生成された画像">
           </div>
@@ -460,14 +461,14 @@
 
         <!-- 保存されたプロンプト・ライブラリ -->
         <div class="glass-panel rounded-2xl p-6 card-hover-gold">
-          <h3 class="text-sm font-bold text-[#2D2926] mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-box-archive text-[#3D8082]"></i>
+          <h3 class="text-sm font-bold text-[#0D3D52] mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-box-archive text-[#1A7FA8]"></i>
             マイ・プロンプトライブラリ（保存履歴）
           </h3>
           
-          <div id="library-empty-state" class="text-center py-8 bg-white/30 rounded-xl border border-dashed border-[#3D8082]/20">
-            <i class="fa-regular fa-folder text-2xl text-[#5E5650]/60 mb-2"></i>
-            <p class="text-xs text-[#5E5650] font-bold">保存されたプロンプトはまだありません</p>
+          <div id="library-empty-state" class="text-center py-8 bg-white/30 rounded-xl border border-dashed border-[#1A7FA8]/20">
+            <i class="fa-regular fa-folder text-2xl text-[#2E7A96]/60 mb-2"></i>
+            <p class="text-xs text-[#2E7A96] font-bold">保存されたプロンプトはまだありません</p>
           </div>
 
           <div id="library-list" class="space-y-3 max-h-60 overflow-y-auto pr-1 hidden">
@@ -481,20 +482,20 @@
   </div>
 
   <!-- 保存用ダイアログ（モーダル） -->
-  <div id="save-modal" class="fixed inset-0 bg-[#2D2926]/40 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 pointer-events-none transition-all duration-300">
-    <div class="glass-panel max-w-sm w-full mx-4 rounded-2xl p-6 border border-[#3D8082]/25 shadow-2xl bg-white/95">
-      <h3 class="text-md font-bold text-[#2D2926] mb-2 flex items-center gap-2">
-        <i class="fa-regular fa-bookmark text-[#3D8082]"></i> ライブラリに保存
+  <div id="save-modal" class="fixed inset-0 bg-[#0D3D52]/40 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="glass-panel max-w-sm w-full mx-4 rounded-2xl p-6 border border-[#1A7FA8]/25 shadow-2xl bg-white/95">
+      <h3 class="text-md font-bold text-[#0D3D52] mb-2 flex items-center gap-2">
+        <i class="fa-regular fa-bookmark text-[#1A7FA8]"></i> ライブラリに保存
       </h3>
-      <p class="text-xs text-[#5E5650] mb-4 font-bold">このプロンプトに分かりやすい名前をつけて保存します。</p>
+      <p class="text-xs text-[#2E7A96] mb-4 font-bold">このプロンプトに分かりやすい名前をつけて保存します。</p>
       
       <input type="text" id="save-title-input" class="w-full glass-input rounded-xl p-3 text-sm mb-4" placeholder="例：カフェの女性フォトリアル">
       
       <div class="flex gap-3 justify-end">
-        <button onclick="closeSaveModal()" class="px-4 py-2 bg-[#E6F3F3] hover:bg-[#3D8082]/10 text-[#5E5650] font-bold rounded-xl text-xs">
+        <button onclick="closeSaveModal()" class="px-4 py-2 bg-[#EBF7FC] hover:bg-[#1A7FA8]/10 text-[#2E7A96] font-bold rounded-xl text-xs">
           キャンセル
         </button>
-        <button onclick="savePromptProcess()" class="px-4 py-2 bg-[#3D8082] text-white font-bold rounded-xl text-xs hover:opacity-90">
+        <button onclick="savePromptProcess()" class="px-4 py-2 bg-[#1A7FA8] text-white font-bold rounded-xl text-xs hover:opacity-90">
           保存する
         </button>
       </div>
@@ -502,62 +503,62 @@
   </div>
 
   <!-- 使い方ガイドダイアログ（モーダル） -->
-  <div id="help-modal" class="fixed inset-0 bg-[#2D2926]/40 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 pointer-events-none transition-all duration-300">
-    <div class="glass-panel max-w-2xl w-full mx-4 rounded-2xl p-6 border border-[#3D8082]/25 shadow-2xl bg-white/95 max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-center mb-4 border-b border-[#3D8082]/15 pb-3">
-        <h3 class="text-md md:text-lg font-bold text-[#2D2926] flex items-center gap-2">
-          <i class="fa-regular fa-circle-question text-[#3D8082]"></i> FlowCraft AI 使い方ガイド
+  <div id="help-modal" class="fixed inset-0 bg-[#0D3D52]/40 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="glass-panel max-w-2xl w-full mx-4 rounded-2xl p-6 border border-[#1A7FA8]/25 shadow-2xl bg-white/95 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center mb-4 border-b border-[#1A7FA8]/15 pb-3">
+        <h3 class="text-md md:text-lg font-bold text-[#0D3D52] flex items-center gap-2">
+          <i class="fa-regular fa-circle-question text-[#1A7FA8]"></i> FlowCraft AI 使い方ガイド
         </h3>
-        <button onclick="closeHelpModal()" class="text-[#5E5650] hover:text-[#2D2926] transition-colors p-1">
+        <button onclick="closeHelpModal()" class="text-[#2E7A96] hover:text-[#0D3D52] transition-colors p-1">
           <i class="fa-solid fa-xmark text-xl"></i>
         </button>
       </div>
       
-      <div class="space-y-5 text-[#2D2926]">
+      <div class="space-y-5 text-[#0D3D52]">
         <!-- アプリの目的 -->
         <div>
-          <h4 class="text-xs md:text-sm font-bold text-[#3D8082] mb-1.5 flex items-center gap-1.5">
+          <h4 class="text-xs md:text-sm font-bold text-[#1A7FA8] mb-1.5 flex items-center gap-1.5">
             <i class="fa-solid fa-bullseye"></i> アプリの目的
           </h4>
-          <p class="text-xs leading-relaxed text-[#5E5650] font-medium bg-[#E6F3F3]/50 p-3 rounded-xl border border-[#3D8082]/15">
+          <p class="text-xs leading-relaxed text-[#2E7A96] font-medium bg-[#EBF7FC]/50 p-3 rounded-xl border border-[#1A7FA8]/15">
             日本語のシンプルなイメージ表現と、直感的オプション選択を融合し、AI画像・動画生成ツール（Flow、Stable Diffusionなど）で最高のポテンシャルを引き出せる「美しく洗練された英語プロンプト」を瞬時に作成・保存・管理できるアシスタントツールです。
           </p>
         </div>
 
         <!-- 画像モードの操作の流れ -->
         <div>
-          <h4 class="text-xs md:text-sm font-bold text-[#3D8082] mb-1.5 flex items-center gap-1.5">
+          <h4 class="text-xs md:text-sm font-bold text-[#1A7FA8] mb-1.5 flex items-center gap-1.5">
             <i class="fa-solid fa-image"></i> 画像モードの操作の流れ
           </h4>
-          <ul class="list-decimal list-inside text-xs space-y-2 text-[#5E5650] font-medium pl-1">
-            <li>画面右上から<span class="font-bold text-[#2D2926]">「画像モード」</span>を選択（初期状態）します。</li>
-            <li><span class="bg-[#F4A261] text-white px-1.5 py-0.5 rounded font-bold">1. 主役</span>フォームに描きたいテーマを日本語で自由に入力します。</li>
+          <ul class="list-decimal list-inside text-xs space-y-2 text-[#2E7A96] font-medium pl-1">
+            <li>画面右上から<span class="font-bold text-[#0D3D52]">「画像モード」</span>を選択（初期状態）します。</li>
+            <li><span class="bg-[#FFE066]/30 text-[#0D3D52] px-1.5 py-0.5 rounded font-bold">1. 主役</span>フォームに描きたいテーマを日本語で自由に入力します。</li>
             <li>アバター画像や既存のキャラクター画像をフォルダからアップロードし、参照指示をプロンプトに結合させます。</li>
-            <li><span class="font-bold text-[#3D8082]">「AI翻訳・拡張」</span>ボタンをタップして、プロ品質の鮮やかな英語プロンプト記述に自動補正します。</li>
+            <li><span class="font-bold text-[#1A7FA8]">「AI翻訳・拡張」</span>ボタンをタップして、プロ品質の鮮やかな英語プロンプト記述に自動補正します。</li>
             <li>アートスタイル、背景・環境、ライティング等の各パラメーターを選び、肉付けします。</li>
-            <li>リアルタイムに合成された「完成プロンプト」を<span class="font-bold text-[#2D2926]">「コピーする」</span>で取得し、各種AIツールの生成欄へ貼り付けます。</li>
-            <li><span class="font-bold text-[#E07A5F]">「テスト画像を生成」</span>を押すと、構築した英文の仕上がりイメージをお手軽に試せます。</li>
+            <li>リアルタイムに合成された「完成プロンプト」を<span class="font-bold text-[#0D3D52]">「コピーする」</span>で取得し、各種AIツールの生成欄へ貼り付けます。</li>
+            <li><span class="font-bold text-[#0E9DC5]">「テスト画像を生成」</span>を押すと、構築した英文の仕上がりイメージをお手軽に試せます。</li>
           </ul>
         </div>
 
         <!-- 動画モードの操作の流れ -->
         <div>
-          <h4 class="text-xs md:text-sm font-bold text-[#3D8082] mb-1.5 flex items-center gap-1.5">
+          <h4 class="text-xs md:text-sm font-bold text-[#1A7FA8] mb-1.5 flex items-center gap-1.5">
             <i class="fa-solid fa-clapperboard"></i> 動画モードの操作の流れ
           </h4>
-          <ul class="list-decimal list-inside text-xs space-y-2 text-[#5E5650] font-medium pl-1">
-            <li>画面右上から<span class="font-bold text-[#2D2926]">「動画モード」</span>に切り替えます。</li>
-            <li>画像モード同様に<span class="font-bold text-[#2D2926]">「1. 主役」</span>を入力、必要に応じてAI翻訳・拡張を行います。</li>
+          <ul class="list-decimal list-inside text-xs space-y-2 text-[#2E7A96] font-medium pl-1">
+            <li>画面右上から<span class="font-bold text-[#0D3D52]">「動画モード」</span>に切り替えます。</li>
+            <li>画像モード同様に<span class="font-bold text-[#0D3D52]">「1. 主役」</span>を入力、必要に応じてAI翻訳・拡張を行います。</li>
             <li>自身のアバター画像やキーフレーム画像を設定することで、動きを持たせる元画像（Image-to-Video参照）としてのプロンプトを構築します。</li>
-            <li>【動画限定】活性化する<span class="font-bold text-[#3D8082]">「5. カメラワーク・モーション」</span>や<span class="font-bold text-[#3D8082]">「6. 目標秒数とテンポ感」</span>より、演出（ドローン・スロー等）やターゲット尺に応じたテンポ感を選定します。</li>
+            <li>【動画限定】活性化する<span class="font-bold text-[#1A7FA8]">「5. カメラワーク・モーション」</span>や<span class="font-bold text-[#1A7FA8]">「6. 目標秒数とテンポ感」</span>より、演出（ドローン・スロー等）やターゲット尺に応じたテンポ感を選定します。</li>
             <li>「クイック魔法ワード追加」から画質や雰囲気を高めるフレーズをクリックし、末尾に素早く結合させます。</li>
-            <li>組み立てられたプロンプトを<span class="font-bold text-[#2D2926]">「コピーする」</span>で取得し、Flow等のAI動画生成プラットフォームに貼り付けます。</li>
+            <li>組み立てられたプロンプトを<span class="font-bold text-[#0D3D52]">「コピーする」</span>で取得し、Flow等のAI動画生成プラットフォームに貼り付けます。</li>
           </ul>
         </div>
       </div>
 
-      <div class="mt-6 pt-4 border-t border-[#3D8082]/15 flex justify-end">
-        <button onclick="closeHelpModal()" class="px-5 py-2 bg-[#3D8082] text-white font-bold rounded-xl text-xs hover:opacity-90 transition-all shadow-sm">
+      <div class="mt-6 pt-4 border-t border-[#1A7FA8]/15 flex justify-end">
+        <button onclick="closeHelpModal()" class="px-5 py-2 bg-[#1A7FA8] text-white font-bold rounded-xl text-xs hover:opacity-90 transition-all shadow-sm">
           閉じる
         </button>
       </div>
@@ -565,8 +566,8 @@
   </div>
 
   <!-- トースト通知用のコンテナ -->
-  <div id="toast" class="fixed bottom-4 right-4 bg-[#3D8082] text-white py-3 px-6 rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 z-50 text-xs font-bold border border-[#F4A261]/30">
-    <i class="fa-solid fa-circle-check text-[#F4A261]"></i>
+  <div id="toast" class="fixed bottom-4 right-4 bg-[#1A7FA8] text-white py-3 px-6 rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 z-50 text-xs font-bold border border-[#FFE066]/30">
+    <i class="fa-solid fa-circle-check text-[#FFE066]"></i>
     <span id="toast-message">コピーしました！</span>
   </div>
 
@@ -597,7 +598,8 @@
     window.onload = function() {
       // ローカルストレージから履歴を読込
       renderLibrary();
-      updatePrompt();
+      // 初期モードを確実に適用してセレクトボックスのdisabled状態を合わせる
+      switchMode('image');
     };
 
     // アバター・参照画像アップロード処理
@@ -649,15 +651,25 @@
       const imgBtn = document.getElementById('mode-image-btn');
       const vidBtn = document.getElementById('mode-video-btn');
       const motionContainer = document.getElementById('motion-container');
+      const motionSelect = document.getElementById('motion-select');
+      const pacingSelect = document.getElementById('pacing-select');
 
       if (mode === 'image') {
-        imgBtn.className = "px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 bg-[#3D8082] text-white shadow-md shadow-[#3D8082]/10";
-        vidBtn.className = "px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 text-[#5E5650] hover:text-[#2D2926]";
-        motionContainer.classList.add('opacity-45', 'pointer-events-none');
+        imgBtn.className = "px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 bg-[#1A7FA8] text-white shadow-md shadow-[#1A7FA8]/10";
+        vidBtn.className = "px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 text-[#2E7A96] hover:text-[#0D3D52]";
+        motionContainer.classList.add('opacity-45');
+        
+        // ネイティブな disabled で確実に無効化
+        if (motionSelect) motionSelect.disabled = true;
+        if (pacingSelect) pacingSelect.disabled = true;
       } else {
-        vidBtn.className = "px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 bg-[#3D8082] text-white shadow-md shadow-[#3D8082]/10";
-        imgBtn.className = "px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 text-[#5E5650] hover:text-[#2D2926]";
-        motionContainer.classList.remove('opacity-45', 'pointer-events-none');
+        vidBtn.className = "px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 bg-[#1A7FA8] text-white shadow-md shadow-[#1A7FA8]/10";
+        imgBtn.className = "px-5 py-2 rounded-lg font-bold text-sm transition-all duration-300 flex items-center gap-2 text-[#2E7A96] hover:text-[#0D3D52]";
+        motionContainer.classList.remove('opacity-45');
+        
+        // ネイティブな disabled を解除して確実に動作させる
+        if (motionSelect) motionSelect.disabled = false;
+        if (pacingSelect) pacingSelect.disabled = false;
       }
       updatePrompt();
     }
@@ -667,13 +679,13 @@
       selectedLighting = value;
       // 全チップのアクティブクラスを除去
       document.querySelectorAll('.lighting-chip').forEach(chip => {
-        chip.classList.remove('bg-[#3D8082]/15', 'border-[#F4A261]', 'text-[#3D8082]', 'shadow-sm');
-        chip.classList.add('bg-white/40', 'border-[#3D8082]/15', 'text-[#5E5650]');
+        chip.classList.remove('bg-[#1A7FA8]/15', 'border-[#FFE066]', 'text-[#1A7FA8]', 'shadow-sm');
+        chip.classList.add('bg-white/40', 'border-[#1A7FA8]/25', 'text-[#2E7A96]');
       });
       // 選択したものにクラスを付与
       if(element) {
-        element.classList.remove('bg-white/40', 'border-[#3D8082]/15', 'text-[#5E5650]');
-        element.classList.add('bg-[#3D8082]/15', 'border-[#F4A261]', 'text-[#3D8082]', 'shadow-sm');
+        element.classList.remove('bg-white/40', 'border-[#1A7FA8]/25', 'text-[#2E7A96]');
+        element.classList.add('bg-[#1A7FA8]/15', 'border-[#FFE066]', 'text-[#1A7FA8]', 'shadow-sm');
       }
       updatePrompt();
     }
@@ -705,7 +717,7 @@
         placeholder.style.display = 'none';
         selectedBoosters.forEach(tag => {
           const span = document.createElement('span');
-          span.className = "booster-tag text-xs font-mono font-bold bg-[#F4A261]/20 text-[#2D2926] border border-[#F4A261] rounded-lg px-2 py-0.5 flex items-center gap-1 cursor-pointer hover:bg-red-500/10 hover:text-red-500 hover:border-red-500 transition-all";
+          span.className = "booster-tag text-xs font-mono font-bold bg-[#FFE066]/30 text-[#0D3D52] border border-[#FFE066] rounded-lg px-2 py-0.5 flex items-center gap-1 cursor-pointer hover:bg-red-500/10 hover:text-red-500 hover:border-red-500 transition-all";
           span.onclick = () => removeBooster(tag);
           span.innerHTML = `${tag} <i class="fa-solid fa-xmark text-[9px]"></i>`;
           container.appendChild(span);
@@ -719,8 +731,12 @@
       const subjectTranslated = document.getElementById('subject-translated-en').value;
       const styleSelect = document.getElementById('style-select').value;
       const envSelect = document.getElementById('env-select').value;
-      const motionSelect = document.getElementById('motion-select').value;
-      const pacingSelect = document.getElementById('pacing-select').value;
+      
+      const motionSelectEl = document.getElementById('motion-select');
+      const pacingSelectEl = document.getElementById('pacing-select');
+      
+      const motionSelect = motionSelectEl ? motionSelectEl.value : '';
+      const pacingSelect = pacingSelectEl ? pacingSelectEl.value : '';
 
       // 主役の英語化（AI翻訳・拡張があった場合はそれを使用、なければモックアップフォールバック）
       let enSubject = "";
@@ -950,17 +966,20 @@
       document.getElementById('style-select').value = "photorealistic, 8k, captured on 35mm lens, cinematic lighting, hyper-realistic";
       document.getElementById('env-select').value = "";
       document.getElementById('motion-select').value = "";
-      document.getElementById('pacing-select').value = "";
+      
+      // pacing-selectの初期選択値（30秒）に正しく初期化する
+      document.getElementById('pacing-select').value = "30s-pacing, balanced pacing, commercial tempo, smooth seamless transition";
+      
       selectedLighting = "";
       selectedBoosters = [];
       removeAvatarImage(); // アバターも解除
       
       // ライティングチップ初期化
       document.querySelectorAll('.lighting-chip').forEach(chip => {
-        chip.classList.remove('bg-[#3D8082]/15', 'border-[#F4A261]', 'text-[#3D8082]', 'shadow-sm');
-        chip.classList.add('bg-white/40', 'border-[#3D8082]/20', 'text-[#5E5650]');
+        chip.classList.remove('bg-[#1A7FA8]/15', 'border-[#FFE066]', 'text-[#1A7FA8]', 'shadow-sm');
+        chip.classList.add('bg-white/40', 'border-[#1A7FA8]/25', 'text-[#2E7A96]');
         if(chip.getAttribute('data-val') === "") {
-          chip.classList.add('bg-[#3D8082]/15', 'border-[#F4A261]', 'text-[#3D8082]', 'shadow-sm');
+          chip.classList.add('bg-[#1A7FA8]/15', 'border-[#FFE066]', 'text-[#1A7FA8]', 'shadow-sm');
         }
       });
 
@@ -1059,21 +1078,21 @@
 
         library.forEach(item => {
           const card = document.createElement('div');
-          card.className = "bg-white/50 hover:bg-white/80 border border-[#3D8082]/20 rounded-xl p-3 flex flex-col justify-between transition-all duration-300 relative group card-hover-gold";
+          card.className = "bg-white/50 hover:bg-white/80 border border-[#1A7FA8]/20 rounded-xl p-3 flex flex-col justify-between transition-all duration-300 relative group card-hover-gold";
           
           card.innerHTML = `
             <div class="flex items-start justify-between">
               <div class="cursor-pointer flex-1 mr-2" onclick="loadSavedPrompt('${item.id}')">
                 <div class="flex items-center gap-1.5">
-                  <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded font-bold ${item.mode === 'video' ? 'bg-[#3D8082]/15 text-[#3D8082]' : 'bg-[#E07A5F]/10 text-[#E07A5F]'}">
+                  <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded font-bold ${item.mode === 'video' ? 'bg-[#1A7FA8]/15 text-[#1A7FA8]' : 'bg-[#0E9DC5]/10 text-[#0E9DC5]'}">
                     ${item.mode === 'video' ? 'VIDEO' : 'IMAGE'}
                   </span>
                   ${item.state?.avatarName ? '<span class="text-[9px] bg-amber-500/10 text-amber-600 font-bold px-1 rounded"><i class="fa-solid fa-paperclip"></i> 参照画像付</span>' : ''}
                 </div>
-                <h4 class="text-xs font-bold text-[#2D2926] mt-1.5 hover:text-[#3D8082] transition-all">${item.title}</h4>
-                <p class="text-[10px] text-[#5E5650] truncate mt-1 font-mono font-medium">${item.prompt}</p>
+                <h4 class="text-xs font-bold text-[#0D3D52] mt-1.5 hover:text-[#1A7FA8] transition-all">${item.title}</h4>
+                <p class="text-[10px] text-[#2E7A96] truncate mt-1 font-mono font-medium">${item.prompt}</p>
               </div>
-              <button onclick="deleteSavedPrompt('${item.id}', event)" class="text-[#5E5650] hover:text-red-500 p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <button onclick="deleteSavedPrompt('${item.id}', event)" class="text-[#2E7A96] hover:text-red-500 p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <i class="fa-regular fa-trash-can text-xs"></i>
               </button>
             </div>
@@ -1095,8 +1114,10 @@
       document.getElementById('subject-translated-en').value = item.state.subjectEN || "";
       document.getElementById('style-select').value = item.state.style || "";
       document.getElementById('env-select').value = item.state.env || "";
-      document.getElementById('motion-select').value = item.state.motion || "";
       
+      if(document.getElementById('motion-select')) {
+        document.getElementById('motion-select').value = item.state.motion || "";
+      }
       if(document.getElementById('pacing-select')) {
         document.getElementById('pacing-select').value = item.state.pacing || "";
       }
@@ -1115,10 +1136,10 @@
 
       selectedLighting = item.state.lighting || "";
       document.querySelectorAll('.lighting-chip').forEach(chip => {
-        chip.classList.remove('bg-[#3D8082]/15', 'border-[#F4A261]', 'text-[#3D8082]', 'shadow-sm');
-        chip.classList.add('bg-white/40', 'border-[#3D8082]/20', 'text-[#5E5650]');
+        chip.classList.remove('bg-[#1A7FA8]/15', 'border-[#FFE066]', 'text-[#1A7FA8]', 'shadow-sm');
+        chip.classList.add('bg-white/40', 'border-[#1A7FA8]/20', 'text-[#2E7A96]');
         if(chip.getAttribute('data-val') === selectedLighting) {
-          chip.classList.add('bg-[#3D8082]/15', 'border-[#F4A261]', 'text-[#3D8082]', 'shadow-sm');
+          chip.classList.add('bg-[#1A7FA8]/15', 'border-[#FFE066]', 'text-[#1A7FA8]', 'shadow-sm');
         }
       });
 
